@@ -25,5 +25,9 @@ body {
   > .brand-icon {
     font-size: 80px;
     color: yellow;
+
+    > i {
+      opacity: 0;
+    }
   }
 }

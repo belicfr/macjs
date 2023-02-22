@@ -1,0 +1,45 @@
+@import "../../../../fonts/fonts.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(30, 30, 30);
+}
+
+#app {
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+  }
+#app > section {
+    height: 100%;
+}
+#app > section#intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#app > section#intro > .os-brand-circle {
+    height: 200px;
+    width: 200px;
+
+    border: black solid 1px;
+    border-radius: 999px;
+
+    outline: 4px white solid;
+
+    box-shadow: 0 0 50px rgba(0 0 0 / 1);
+
+    background: url("../../../../sources/default-wp.jpg") center / cover no-repeat;
+
+    margin-bottom: 50px;
+}
+#app > section#intro > div > h1 {
+    font-size: 3em;
+    font-weight: 300;
+}

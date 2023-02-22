@@ -2,21 +2,21 @@ const BRAND_ICON = document.querySelector("#app > .brand-icon > i");
 
 animation.animate([
     {
-        type: "from",
+        type: "to",
         element: BRAND_ICON,
         data: {
-            delay: 10,
+            delay: 1,
             duration: 0,
 
-            opacity: 0,
+            opacity: 1,
         },
     },
     {
         type: "add",
         data: () => {
             setTimeout(() => {
-                applications.openNative("Booter.app")
-            }, 5000);
+                applications.openNative("Installer.app");
+            }, 5_000);
         },
     }
 ]);
