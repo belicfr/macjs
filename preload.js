@@ -96,6 +96,13 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const NODES = {
+        /**
+         * Get (grand)child by using "nested" selectors.
+         * WARNING: must be used in DOMContentLoaded listener.
+         * @param element Reference for selectors
+         * @param selectors Nested selectors to find child
+         * @returns {*} Child jQuery object
+         */
         getChild: (element, ...selectors) => {
             let child = window.$(element);
 
@@ -111,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         /**
          * Set listener for all not disabled buttons to play
          * Media Keys audio on click.
+         * WARNING: must be used in DOMContentLoaded listener.
          */
         prepareActiveButtonsToBeep: () => {
             $(document).on("click", "button:not([disabled])", () => {
