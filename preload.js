@@ -195,8 +195,17 @@ const APPLICATIONS = {
 };
 
 const SYNTAX_PRECEPTS = {
+    /**
+     * Device name RegEx pattern.
+     */
     deviceName: RegExp("^([a-z0-9_]+)$"),
 
+    /**
+     * Check if given regex is respected by given string.
+     * @param string Given string to test with given RegEx
+     * @param regex Given RegEx to test with given string
+     * @returns boolean If RegEx is respected, or not, by string
+     */
     validate: (string, regex) => {
         return string.match(regex);
     },
