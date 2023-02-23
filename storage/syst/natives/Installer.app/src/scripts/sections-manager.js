@@ -3,7 +3,7 @@ const NEXT_SECTION_BUTTONS
 const PREVIOUS_SECTION_BUTTONS
     = document.querySelectorAll("button[button-action='previousSection']");
 const SECTIONS = [
-    "intro", "installer_os",
+    "intro", "installer_os", "installer_first_session",
 ];
 
 let currentSectionIndex = 0,

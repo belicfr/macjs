@@ -77,6 +77,8 @@
                                         </option>
                                     </optgroup>
                                 </select>
+
+                                <ul class="input-errors" id="language_errors"></ul>
                             </label>
                         </div>
 
@@ -101,7 +103,102 @@
                                 Cancel
                             </button>
 
-                            <button class="button button-primary" button-action="nextSection" type="submit" disabled>
+                            <button class="button button-primary" button-action="nextSection" type="button" disabled>
+                                Continue
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="footer">
+                    <div class="brand-icon">
+                        <i class="fa-brands fa-apple"></i>
+                    </div>
+
+                    <div class="copyrights">
+                        <p>
+                            This product is in no way produced, offered, supported or affiliated with Apple Inc. <br />
+                            It is an independent non-profit project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hidden" id="installer_first_session">
+        <div class="window">
+            <div class="window-header">
+                <div class="window-primitive-commands"></div>
+
+                <div class="window-title">
+                    MacJS installation
+                </div>
+            </div>
+
+            <div class="window-body">
+                <div class="main">
+                    <h1>
+                        Your first session
+                    </h1>
+
+                    <p class="intro">
+                        This first session will be used as the <strong>Administrator</strong> session.
+                    </p>
+
+                    <form id="admin_session_creation">
+                        <div class="form-component avatar-selection">
+                            <label for="avatar">
+                                <div class="avatar-preview">
+                                    <div class="filter">
+                                        Import
+                                    </div>
+                                </div>
+                            </label>
+
+                            <input class="hidden" type="file" name="avatar" id="avatar" />
+                        </div>
+
+                        <div class="form-component">
+                            <label class="label" for="name">
+                                <p>
+                                    Name:
+                                </p>
+
+                                <input class="input" id="name" type="text" maxlength="25"
+                                       placeholder="25 characters max." />
+                            </label>
+                        </div>
+
+                        <div class="form-component">
+                            <label class="label" for="password">
+                                <p>
+                                    Password:
+                                </p>
+
+                                <input class="input" id="password" type="password" />
+                            </label>
+                        </div>
+
+                        <div class="form-component">
+                            <label class="label" for="password_hint">
+                                <p>
+                                    Password hint:
+                                    <span class="label-description">
+                                        It will appear if you fail to type your password.
+                                    </span>
+                                </p>
+
+                                <input class="input" id="password_hint" type="text" />
+                            </label>
+                        </div>
+
+                        <div class="form-component buttons">
+                            <button class="button button-secondary" button-action="previousSection" type="button">
+                                Cancel
+                            </button>
+
+                            <button class="button button-primary" button-action="nextSection" type="button" disabled>
                                 Continue
                             </button>
                         </div>

@@ -7,6 +7,7 @@ $minimize: #FFCF4A;
 $resize: #4EDE7F;
 
 $textSecondary: #4c4c4c;
+$textLightGray: #6c6c6c;
 
 $brandColor: yellow;
 
@@ -210,6 +211,12 @@ $brandColor: yellow;
     font-weight: 700;
 
     margin-bottom: 5px;
+
+    > span.label-description {
+      color: $textLightGray;
+      font-style: italic;
+      font-weight: 500;
+    }
   }
 }
 
