@@ -33,12 +33,31 @@
     </section>
 
     <section class="hidden" id="installer_os">
-        <div class="window" window-primitive-commands="resize">
+        <div class="window">
             <div class="window-header">
                 <div class="window-primitive-commands"></div>
+
+                <div class="window-title">
+                    MacJS installation
+                </div>
             </div>
 
-            <!--  -->
+            <div class="window-body">
+                <form id="os_config">
+                    <div class="form-component">
+                        <label class="label" for="device_name">
+                            <p>
+                                Device name:
+                            </p>
+
+                            <input class="input"
+                                   type="text" 
+                                   name="device_name" 
+                                   id="device_name" />
+                        </label>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 </div>

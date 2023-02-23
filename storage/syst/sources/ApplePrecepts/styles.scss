@@ -5,6 +5,8 @@ $close: #FF5353;
 $minimize: #FFCF4A;
 $resize: #4EDE7F;
 
+$textSecondary: #4c4c4c;
+
 .btn {
   border: none;
   border-radius: 3px;
@@ -37,6 +39,10 @@ $resize: #4EDE7F;
   background: white;
 
   position: relative;
+
+  box-shadow: 0 0 10px rgba(51, 51, 51, 0.1);
+  
+  color: black;
 
   > .window-system-corner {
     position: absolute;
@@ -118,5 +124,36 @@ $resize: #4EDE7F;
         }
       }
     }
+
+    > .window-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: $textSecondary;
+    }
+  }
+
+  > .window-body {
+    padding: 15px 20px;
+  }
+}
+
+.label {
+  > p {
+    font-size: 13px;
+    font-weight: 700;
+
+    margin-bottom: 5px;
+  }
+}
+
+.input {
+  padding: 5px;
+
+  border: solid 1px #CCCCCC;
+
+  color: $textSecondary;
+
+  &:focus {
+    outline: solid 2.5px rgba(37, 85, 255, 0.5);
   }
 }
