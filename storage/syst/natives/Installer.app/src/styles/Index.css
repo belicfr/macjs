@@ -1,5 +1,173 @@
 @import "../../../../fonts/fonts.css";
-@import "../../../../sources/ApplePrecepts/styles.css";
+::-webkit-scrollbar {
+  background-color: white;
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: #f4f4f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+  border: 5px solid #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a0a0a5;
+  border: 4px solid #f4f4f4;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* MacOS inspired scrollbar by https://gist.github.com/spemer */
+.button {
+  border: none;
+  border-radius: 3px;
+  padding: 4px 10px;
+  font-weight: 600;
+}
+.button:hover {
+  cursor: pointer;
+}
+.button[disabled]:hover {
+  cursor: not-allowed;
+}
+.button:active, .button[disabled] {
+  opacity: 0.7;
+}
+.button.button-primary {
+  background: #1290FF;
+  border-top: 0.5px rgba(255, 255, 255, 0.6) solid;
+  color: white;
+}
+.button.button-secondary {
+  background: #e5e5e5;
+  color: black;
+}
+
+.window {
+  border: solid 1px #cccccc;
+  border-radius: 12px;
+  background: white;
+  position: relative;
+  box-shadow: 0 0 10px rgba(51, 51, 51, 0.1);
+  color: black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+}
+.window > .window-system-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+.window > .window-system-corner.corner-tl {
+  top: -2px;
+  left: -2px;
+  cursor: nwse-resize;
+}
+.window > .window-system-corner.corner-tr {
+  top: -2px;
+  right: -2px;
+  cursor: nesw-resize;
+}
+.window > .window-system-corner.corner-bl {
+  bottom: -2px;
+  left: -2px;
+  cursor: nesw-resize;
+}
+.window > .window-system-corner.corner-br {
+  bottom: -2px;
+  right: -2px;
+  cursor: nwse-resize;
+}
+.window > .window-header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 50px;
+  flex: none;
+  overflow: hidden;
+}
+.window > .window-header > .window-primitive-commands {
+  display: flex;
+  column-gap: 7px;
+}
+.window > .window-header > .window-primitive-commands > div {
+  width: 13px;
+  height: 13px;
+  border-radius: 999px;
+  transition: transform 0.25s;
+}
+.window > .window-header > .window-primitive-commands > div:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.window > .window-header > .window-primitive-commands > div:active {
+  opacity: 0.7;
+}
+.window > .window-header > .window-primitive-commands > div.close {
+  background: #FF5353;
+}
+.window > .window-header > .window-primitive-commands > div.minimize {
+  background: #FFCF4A;
+}
+.window > .window-header > .window-primitive-commands > div.resize {
+  background: #4EDE7F;
+}
+.window > .window-header > .window-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4c4c4c;
+}
+.window > .window-body {
+  flex: 1;
+  padding: 30px 50px;
+  overflow: hidden;
+}
+@media screen and (min-width: 1280px) {
+  .window > .window-body {
+    padding: 30px 150px;
+  }
+}
+
+.label > p {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.input {
+  padding: 5px;
+  border: solid 1px #CCCCCC;
+  border-radius: 5px;
+  color: #4c4c4c;
+  display: block;
+  width: 100%;
+}
+.input:focus {
+  outline: solid 2.5px rgba(37, 85, 255, 0.8);
+}
+.input.input-lg {
+  padding: 7px;
+  font-size: 17px;
+}
+
+form .form-component:not(:last-child) {
+  margin-bottom: 15px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -61,6 +229,43 @@ body {
 #app > section[id^=installer_] > .window {
   width: 50%;
   height: 75%;
+}
+#app > section[id^=installer_] > .window > .window-body {
+  display: flex;
+  flex-direction: column;
+}
+#app > section[id^=installer_] > .window > .window-body > .main {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-bottom: 30px;
+  padding: 3px;
+}
+#app > section[id^=installer_] > .window > .window-body > .main > h1 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 40px;
+  color: #4c4c4c;
+  margin-bottom: 50px;
+}
+#app > section[id^=installer_] > .window > .window-body > .main > form > .form-component.buttons {
+  display: flex;
+  justify-content: center;
+  column-gap: 7px;
+}
+#app > section[id^=installer_] > .window > .window-body > .footer {
+  flex: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+#app > section[id^=installer_] > .window > .window-body > .footer > .brand-icon {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+#app > section[id^=installer_] > .window > .window-body > .footer > .copyrights {
+  font-size: 11px;
+  color: #4c4c4c;
 }
 
 /*# sourceMappingURL=Index.css.map */

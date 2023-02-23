@@ -194,6 +194,30 @@ const APPLICATIONS = {
     },
 };
 
+const SYNTAX_PRECEPTS = {
+    deviceName: RegExp("^([a-z0-9_]+)$"),
+
+    validate: (string, regex) => {
+        return string.match(regex);
+    },
+};
+
+const SYSTEM = {
+    /**
+     * Available languages in MacJS system.
+     */
+    availableLanguages: {
+        "en_US": "English (USA)",
+    },
+
+    /**
+     * Available products for activation.
+     */
+    availableProducts: {
+        "macjs_beta": "MacJS Beta",
+    },
+};
+
 /*
  * APIs exposing
  */
@@ -201,3 +225,5 @@ const APPLICATIONS = {
 contextBridge.exposeInMainWorld("packages", PACKAGE_MANAGER);
 contextBridge.exposeInMainWorld("animation", SYSTEM_ANIMATION);
 contextBridge.exposeInMainWorld("applications", APPLICATIONS);
+contextBridge.exposeInMainWorld("syntaxPrecepts", SYNTAX_PRECEPTS);
+contextBridge.exposeInMainWorld("system", SYSTEM);

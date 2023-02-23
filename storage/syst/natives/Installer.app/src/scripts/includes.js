@@ -1,0 +1,1 @@
+packages.includeCSS("@fortawesome/fontawesome-free/css/all.min.css");

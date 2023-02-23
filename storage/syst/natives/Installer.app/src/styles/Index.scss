@@ -1,5 +1,5 @@
 @import "../../../../fonts/fonts.css";
-@import "../../../../sources/ApplePrecepts/styles.css";
+@import "../../../../sources/ApplePrecepts/styles";
 
 * {
   margin: 0;
@@ -76,6 +76,61 @@ body {
       > .window {
         width: 50%;
         height: 75%;
+
+        > .window-body {
+          display: flex;
+          flex-direction: column;
+
+          > .main {
+            flex: 1;
+
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            margin-bottom: 30px;
+
+            padding: 3px; // prevent x-borders vs. overflow hidden
+
+            > h1 {
+              text-align: center;
+              font-weight: 300;
+              font-size: 40px;
+              color: $textSecondary;
+
+              margin-bottom: 50px;
+            }
+
+            > form {
+              > .form-component {
+                &.buttons {
+                  display: flex;
+                  justify-content: center;
+                  column-gap: 7px;
+                }
+              }
+            }
+          }
+
+          > .footer {
+            flex: none;
+
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+
+            > .brand-icon {
+              font-size: 25px;
+
+              margin-bottom: 20px;
+            }
+
+            > .copyrights {
+              font-size: 11px;
+              color: $textSecondary;
+            }
+          }
+        }
       }
     }
   }

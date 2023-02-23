@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="../styles/Index.css" />
 
     <!-- JS -->
+    <script src="../scripts/includes.js" defer></script>
     <script src="../scripts/prepare.js" defer></script>
     <script src="../scripts/sections-manager.js" defer></script>
+    <script src="../scripts/inputs-manager.js" defer></script>
 </head>
 <body>
 <div id="app">
@@ -24,7 +26,7 @@
             </h1>
 
             <div class="buttons">
-                <button class="btn btn-primary"
+                <button class="button button-primary"
                         button-action="nextSection">
                     Install
                 </button>
@@ -43,20 +45,81 @@
             </div>
 
             <div class="window-body">
-                <form id="os_config">
-                    <div class="form-component">
-                        <label class="label" for="device_name">
-                            <p>
-                                Device name:
-                            </p>
+                <div class="main">
+                    <h1>
+                        MacJS installation
+                    </h1>
 
-                            <input class="input"
-                                   type="text" 
-                                   name="device_name" 
-                                   id="device_name" />
-                        </label>
+                    <form id="os_config">
+                        <div class="form-component">
+                            <label class="label" for="device_name">
+                                <p>
+                                    Device name:
+                                </p>
+
+                                <input class="input" id="device_name" type="text" name="device_name" maxlength="25"
+                                       placeholder="25 characters max." />
+
+                                <ul class="input-errors"></ul>
+                            </label>
+                        </div>
+
+                        <div class="form-component">
+                            <label class="label" for="language">
+                                <p>
+                                    Language:
+                                </p>
+
+                                <select class="input" name="language" id="language">
+                                    <optgroup label="Choose a language">
+                                        <option value="en_US">
+                                            English (USA)
+                                        </option>
+                                    </optgroup>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="form-component">
+                            <label class="label" for="product">
+                                <p>
+                                    Product:
+                                </p>
+
+                                <select class="input" name="product" id="product">
+                                    <optgroup label="Choose a product">
+                                        <option value="macjs_beta">
+                                            MacJS Beta
+                                        </option>
+                                    </optgroup>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="form-component buttons">
+                            <button class="button button-secondary" button-action="previousSection" type="button">
+                                Cancel
+                            </button>
+
+                            <button class="button button-primary" button-action="nextSection" type="submit" disabled>
+                                Continue
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="footer">
+                    <div class="brand-icon">
+                        <i class="fa-brands fa-apple"></i>
                     </div>
-                </form>
+
+                    <div class="copyrights">
+                        <p>
+                            This product is in no way produced, offered, supported or affiliated with Apple Inc. <br />
+                            It is an independent non-profit project.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
