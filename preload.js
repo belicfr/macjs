@@ -1,6 +1,7 @@
 const { contextBridge } = require("electron");
 const path = require("path");
 const gsap = require("gsap").gsap;
+const sound = require("sound-play");
 
 /*
  * DOM dependents APIs
@@ -106,12 +107,27 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     };
 
+    const AUDIO = {
+        /**
+         * Set listener for all not disabled buttons to play
+         * Media Keys audio on click.
+         */
+        prepareActiveButtonsToBeep: () => {
+            $(document).on("click", "button:not([disabled])", () => {
+                sound.play(
+                    path.join(__dirname, "storage/syst/audio/media_keys.mp3")
+                );
+            });
+        },
+    };
+
     /*
      * APIs exposing
      */
 
     contextBridge.exposeInMainWorld("nodes", NODES);
     contextBridge.exposeInMainWorld("windows", WINDOWS);
+    contextBridge.exposeInMainWorld("audio", AUDIO);
 });
 
 /*
