@@ -1,0 +1,122 @@
+$primary: #1290FF;
+$primary-active: #60B5FD;
+
+$close: #FF5353;
+$minimize: #FFCF4A;
+$resize: #4EDE7F;
+
+.btn {
+  border: none;
+  border-radius: 3px;
+
+  padding: 4px 10px;
+
+  font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background: $primary-active !important;
+  }
+
+  &.btn-primary {
+    background: $primary;
+
+    border-top: 0.5px rgba(255 255 255 / .6) solid;
+
+    color: white;
+  }
+}
+
+.window {
+  border: solid 1px #cccccc;
+  border-radius: 12px;
+
+  background: white;
+
+  position: relative;
+
+  > .window-system-corner {
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    // background: greenyellow;
+
+    &.corner-tl {
+      top: -2px;
+      left: -2px;
+
+      cursor: nwse-resize;
+    }
+
+    &.corner-tr {
+      top: -2px;
+      right: -2px;
+
+      cursor: nesw-resize;
+    }
+
+    &.corner-bl {
+      bottom: -2px;
+      left: -2px;
+
+      cursor: nesw-resize;
+    }
+
+    &.corner-br {
+      bottom: -2px;
+      right: -2px;
+
+      cursor: nwse-resize;
+    }
+  }
+
+  > .window-header {
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+
+    height: 50px;
+
+    > .window-primitive-commands {
+      display: flex;
+      column-gap: 7px;
+
+      > div {
+        width: 13px;
+        height: 13px;
+
+        border-radius: 999px;
+
+        transition: transform .25s;
+
+        &:hover {
+          transform: scale(1.2);
+
+          cursor: pointer;
+        }
+
+        &:active {
+          opacity: .7;
+        }
+
+        &.close {
+          background: $close;
+        }
+
+        &.minimize {
+          background: $minimize;
+        }
+
+        &.resize {
+          background: $resize;
+        }
+      }
+    }
+  }
+}

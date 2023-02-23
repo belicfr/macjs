@@ -1,1 +1,1 @@
-packages.include("@fortawesome/fontawesome-free/css/all.min.css");
+packages.includeCSS("@fortawesome/fontawesome-free/css/all.min.css");
